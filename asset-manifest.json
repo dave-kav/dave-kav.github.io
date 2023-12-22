@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/dave-kav/static/css/main.f855e6bc.css",
+    "main.js": "/dave-kav/static/js/main.745f052d.js",
+    "static/js/787.1c43e264.chunk.js": "/dave-kav/static/js/787.1c43e264.chunk.js",
+    "index.html": "/dave-kav/index.html",
+    "main.f855e6bc.css.map": "/dave-kav/static/css/main.f855e6bc.css.map",
+    "main.745f052d.js.map": "/dave-kav/static/js/main.745f052d.js.map",
+    "787.1c43e264.chunk.js.map": "/dave-kav/static/js/787.1c43e264.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.745f052d.js"
+  ]
+}
