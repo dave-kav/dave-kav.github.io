@@ -14,9 +14,11 @@ function App() {
         <hr style={{borderTop: "1px dashed #8c8b8b", width: "100%"}}/>
 
         </h2>
+         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
         <h3>
-          Senior Backend Software Engineer @ <a className="App-link" href="https://www.apata.com">Apata</a>
+          Senior Backend Engineer @ <a className="App-link" href="https://www.apata.com">Apata</a>
         </h3>
+        </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
           <IconLink url="mailto:dave.kavanagh@gmail.com" icon={faEnvelopeSquare} text="Email" className="App-link" />
           <IconLink url="./CV_2023.pdf" icon={faBook} text="Resumé" className="App-link" />
