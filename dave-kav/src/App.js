@@ -8,10 +8,16 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h2>
-        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'flex-start'}}>
+        <div style={{
+          display: 'flex', 
+          flexDirection: 'row', 
+          alignItems: 'center', 
+          flexWrap: 'wrap',
+          justifyContent: 'center'
+        }}>
           <p>David Kavanagh</p> 
-          <img src="./profile.jpeg" alt="Profile" style={{width: '80px', height: '80px', borderRadius: '50%', marginLeft: '20px', marginTop: '35px'}}/>
-          </div>
+          <img src="./profile.jpeg" alt="Profile" style={{width: '80px', height: '80px', borderRadius: '50%', marginLeft: '20px'}}/>
+        </div>
         <hr style={{borderTop: "1px dashed #8c8b8b", width: "100%"}}/>
 
         </h2>
