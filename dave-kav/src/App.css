@@ -1,20 +1,18 @@
+@keyframes pulsate {
+  0% { background-color: #4e525f; }
+  50% { background-color: #3c3f4b; }
+  100% { background-color: #4e525f; }
+}
+
+body {
+  animation: pulsate 4s infinite ease-in-out;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,14 +23,77 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ffffff !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container-fluid .jumbotron, .container .jumbotron {
+  border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 6px;  /* reduced padding */
+    padding-right: 6px;  /* reduced padding */
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 768px) {
+  .container-fluid .jumbotron, .container .jumbotron {
+      padding-left: 60px;
+      padding-right: 60px;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+      padding-bottom: 48px;
+      padding-top: 48px;
+  }
+}
+
+.jumbotron {
+  background-color: #282c34;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-radius: 20px;
+  box-shadow: 20px 10px 20px 20px rgba(0, 0, 0, 0.5)
+}
+
+
+.container-fluid .minitron, .container .minitron {
+  border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .container-fluid .minitron, .container .minitron {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .minitron {
+      padding-bottom: 48px;
+      padding-top: 48px;
+  }
+}
+
+.minitron {
+  background-color: #282c34;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 20px;
+  box-shadow:  10px 5px 10px 10px rgba(0, 0, 0, 0.5)
 }
