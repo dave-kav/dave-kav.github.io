@@ -67,7 +67,7 @@ function App() {
               </div>
               <div style={{ borderRight: "1px solid #ddd", padding: "0 20px" }}>
                 <IconLink
-                  url="./CV_2023.pdf"
+                  url="./CV_DK.pdf"
                   icon={faBook}
                   text="Resumé"
                   className="App-link"
