@@ -41,7 +41,7 @@ function App() {
           >
             <h3>
               Senior Backend Engineer @{" "}
-              <a className="App-link" href="https://www.apata.com">
+              <a className="App-link" href="https://apata.com">
                 Apata
               </a>
             </h3>
