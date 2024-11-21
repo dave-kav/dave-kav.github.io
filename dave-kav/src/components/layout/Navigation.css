@@ -33,6 +33,12 @@
   .navigation__logo-image {
     height: 24px;
     width: auto;
+    filter: invert(0%);
+    transition: filter var(--transition-base);
+  }
+  
+  :root[data-theme="dark"] .navigation__logo-image {
+    filter: invert(100%);
   }
   
   .navigation__desktop {
