@@ -1,0 +1,31 @@
+.layout {
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__main {
+  flex: 1;
+  padding-top: 80px;
+  width: 100%;
+}
+
+/* Ensure smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Hide scrollbar but keep functionality */
+@media screen and (min-width: 768px) {
+  .layout {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .layout::-webkit-scrollbar {
+    display: none;
+  }
+}

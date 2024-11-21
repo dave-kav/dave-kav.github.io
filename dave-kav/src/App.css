@@ -1,99 +1,49 @@
-@keyframes pulsate {
-  0% { background-color: #4e525f; }
-  50% { background-color: #3c3f4b; }
-  100% { background-color: #4e525f; }
+/* Add any app-wide styles here */
+:root {
+  /* Light theme variables */
+  --color-background: #fafafa;
+  --color-background-alt: #ffffff;
+  --color-foreground: #ffffff;
+  --color-text-primary: #111111;
+  --color-text-secondary: #666666;
+  /* ... other variables ... */
 }
 
+/* Dark theme variables */
+:root.dark {
+  --color-background: #111111;
+  --color-background-alt: #1a1a1a;
+  --color-foreground: #1e1e1e;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a0a0;
+  /* ... other variables ... */
+}
+
+/* Global styles */
 body {
-  animation: pulsate 4s infinite ease-in-out;
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
 }
 
-.App {
-  text-align: center;
+/* Smooth transitions for theme changes */
+body * {
+  transition: background-color var(--transition-standard),
+              color var(--transition-standard),
+              border-color var(--transition-standard);
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--color-accent);
   color: white;
-}
-
-.App-link {
-  color: #ffffff !important;
-}
-
-.container-fluid .jumbotron, .container .jumbotron {
-  border-radius: 6px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-@media screen and (max-width: 768px) {
-  .jumbotron {
-    margin-left: 15px;
-    margin-right: 15px;
-    padding-left: 6px;  /* reduced padding */
-    padding-right: 6px;  /* reduced padding */
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container-fluid .jumbotron, .container .jumbotron {
-      padding-left: 60px;
-      padding-right: 60px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .jumbotron {
-      padding-bottom: 48px;
-      padding-top: 48px;
-  }
-}
-
-.jumbotron {
-  background-color: #282c34;
-  padding-left: 60px;
-  padding-right: 60px;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  padding-top: 30px;
-  border-radius: 20px;
-  box-shadow: 20px 10px 20px 20px rgba(0, 0, 0, 0.5)
-}
-
-
-.container-fluid .minitron, .container .minitron {
-  border-radius: 6px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-@media screen and (min-width: 768px) {
-  .container-fluid .minitron, .container .minitron {
-      padding-left: 20px;
-      padding-right: 20px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .minitron {
-      padding-bottom: 48px;
-      padding-top: 48px;
-  }
-}
-
-.minitron {
-  background-color: #282c34;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  border-radius: 20px;
-  box-shadow:  10px 5px 10px 10px rgba(0, 0, 0, 0.5)
 }
