@@ -26,11 +26,23 @@
   }
   
   .navigation__logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-text-primary);
-    text-decoration: none;
-    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navigation__logo-image {
+    height: 24px;
+    width: auto;
+  }
+  
+  /* Light mode */
+  :root[data-theme="light"] .navigation__logo-image {
+    filter: invert(0%);
+  }
+  
+  /* Dark mode */
+  :root[data-theme="dark"] .navigation__logo-image {
+    filter: invert(85%);
   }
   
   .navigation__desktop {

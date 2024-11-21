@@ -23,7 +23,7 @@ export const Navigation = () => {
     e.preventDefault();
     // Assuming resume.pdf is in the public folder
     const link = document.createElement('a');
-    link.href = '/resume.pdf';
+    link.href = 'resume.pdf';
     link.download = 'david-kavanagh-resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -35,7 +35,7 @@ export const Navigation = () => {
       <Container>
         <nav className="navigation__inner">
           <a href="#" className="navigation__logo">
-            DK
+            <img src="/logo.svg" alt="DK Logo" className="navigation__logo-image" />
           </a>
 
           {/* Desktop Navigation */}
