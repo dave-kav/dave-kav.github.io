@@ -34,6 +34,8 @@ export const Hero = () => {
                 src="/profile.jpeg" 
                 alt="David Kavanagh"
                 className="hero__image"
+                loading="eager"
+                decoding="async"
               />
             </div>
           </div>

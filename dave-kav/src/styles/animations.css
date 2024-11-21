@@ -54,3 +54,15 @@
 .stagger-children > *:nth-child(3) { animation-delay: 300ms; }
 .stagger-children > *:nth-child(4) { animation-delay: 400ms; }
 .stagger-children > *:nth-child(5) { animation-delay: 500ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+  }
+
+  section {
+    transition: none;
+  }
+}

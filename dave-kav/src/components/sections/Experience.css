@@ -21,18 +21,18 @@
 }
 
 .experience-item {
-  transform: translateY(20px);
-  transition: all 0.5s ease;
+  /* transform: translateY(20px);
+  transition: all 0.5s ease; */
   padding: 2rem;
   border-radius: 16px;
   background: var(--color-foreground);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
-
+/* 
 .experience-item.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
+} */
 
 .experience-item__header {
   margin-bottom: 1.5rem;
