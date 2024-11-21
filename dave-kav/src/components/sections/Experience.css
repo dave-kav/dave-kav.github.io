@@ -45,6 +45,16 @@
   object-fit: contain;
   background: white;
   padding: 6px;
+  filter: grayscale(100%);
+  transition: filter var(--transition-base);
+}
+
+.experience-item:first-child .experience-item__logo {
+  filter: grayscale(0%);
+}
+
+.experience-item:hover .experience-item__logo {
+  filter: grayscale(0%);
 }
 
 .experience-item__company-info h3 {
