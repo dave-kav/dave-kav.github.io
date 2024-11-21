@@ -35,16 +35,6 @@
     width: auto;
   }
   
-  /* Light mode */
-  :root[data-theme="light"] .navigation__logo-image {
-    filter: invert(0%);
-  }
-  
-  /* Dark mode */
-  :root[data-theme="dark"] .navigation__logo-image {
-    filter: invert(85%);
-  }
-  
   .navigation__desktop {
     display: flex;
     align-items: center;
@@ -182,13 +172,6 @@
   
     .navigation__mobile {
       display: block;
-    }
-  }
-  
-  /* Dark mode adjustments */
-  @media (prefers-color-scheme: dark) {
-    .navigation.is-scrolled {
-      background: rgba(var(--color-background-rgb), 0.8);
     }
   }
   
