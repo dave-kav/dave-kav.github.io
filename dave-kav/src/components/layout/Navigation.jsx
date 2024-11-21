@@ -46,6 +46,9 @@ export const Navigation = () => {
             <a href="#experience" className="navigation__link">
               Experience
             </a>
+            <a href="#contact" className="navigation__link">
+              Contact
+            </a>
             <button 
               onClick={handleResumeClick}
               className="navigation__resume-btn"
@@ -98,6 +101,13 @@ export const Navigation = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Experience
+          </a>
+          <a
+            href="#contact"
+            className="navigation__mobile-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Contact
           </a>
           <button 
             onClick={(e) => {

@@ -1,6 +1,7 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { Container } from '../ui/Container';
 import './Experience.css';
+import { useInView } from '../../hooks/useInView';
 
 const experiences = [
   {
@@ -84,27 +85,14 @@ const experiences = [
 
 export const Experience = () => {
   const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const items = document.querySelectorAll('.experience-item');
-    items.forEach(item => observer.observe(item));
-
-    return () => observer.disconnect();
-  }, []);
+  const isInView = useInView(sectionRef);
 
   return (
-    <section id="experience" className="experience" ref={sectionRef}>
+    <section 
+      ref={sectionRef}
+      id="experience" 
+      className={`experience ${isInView ? 'is-in-view' : 'is-blurred'}`}
+    >
       <Container>
         <h2 className="experience__title">Experience</h2>
         

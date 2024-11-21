@@ -1,34 +1,17 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { Container } from '../ui/Container';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { useInView } from '../../hooks/useInView';
 import './Hero.css';
 
 export const Hero = () => {
-  const heroRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const heroElement = heroRef.current;
-    if (heroElement) {
-      observer.observe(heroElement);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef);
 
   return (
-    <section className="hero" ref={heroRef}>
+    <section 
+      ref={sectionRef}
+      className={`hero ${isInView ? 'is-in-view' : 'is-blurred'}`}
+    >
       <Container>
         <div className="hero__content">
           <div className="hero__text">
@@ -42,28 +25,7 @@ export const Hero = () => {
               I build scalable backend systems and solve complex engineering challenges
               at <a href="https://evervault.com" target="_blank" rel="noopener noreferrer">Evervault</a>.
               Focused on distributed systems and cloud architecture.
-            </p>
-
-            <div className="hero__links">
-              <a 
-                href="https://github.com/dave-kav" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hero__social-link"
-              >
-                <FontAwesomeIcon icon={faGithub} />
-                <span>GitHub</span>
-              </a>
-              <a 
-                href="https://linkedin.com/in/dave-kavanagh" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hero__social-link"
-              >
-                <FontAwesomeIcon icon={faLinkedin} />
-                <span>LinkedIn</span>
-              </a>
-            </div>
+            </p>            
           </div>
 
           <div className="hero__visual">
