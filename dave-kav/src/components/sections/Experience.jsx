@@ -48,7 +48,7 @@ const experiences = [
       'Provided technical leadership within the team'
     ],
     technologies: ['TypeScript', 'Java', 'Spring', 'AWS', 'Jenkins', 'Terraform'],
-    logo: '/logos/salesforce.svg'
+    logo: '/logos/salesforce.png'
   },
   {
     id: 4,
@@ -79,7 +79,7 @@ const experiences = [
       'Developed prototypes using Apache Spark and Kafka'
     ],
     technologies: ['Apache Spark', 'Kafka', 'Big Data', 'Java'],
-    logo: '/logos/dassault.svg'
+    logo: '/logos/dassault.png'
   }
 ];
 
@@ -90,8 +90,8 @@ export const Experience = () => {
   return (
     <section 
       ref={sectionRef}
-      id="[section-id]" 
-      className={`[section-name] ${isInView ? 'is-in-view' : 'is-blurred'}`}
+      id="experience" 
+      className={`experience ${isInView ? 'is-in-view' : 'is-blurred'}`}
     >
       <Container>
         <h2 className="experience__title">Experience</h2>

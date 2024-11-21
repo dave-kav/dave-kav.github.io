@@ -2,15 +2,19 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: var(--color-background);
-  padding: var(--space-2xl) 0;
+  padding: var(--space-4xl) 0;
 }
 
 .hero__content {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 4rem;
+  gap: 2rem;
   align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
   transform: translateY(20px);
   transition: all 0.8s ease;
 }

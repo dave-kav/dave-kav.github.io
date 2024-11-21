@@ -131,12 +131,10 @@ body {
 
 section {
   position: relative;
-  transition: opacity 0.5s ease, filter 0.5s ease;
-}
-
-section.is-blurred {
-  opacity: 0.3;
-  filter: blur(4px);
+  opacity: 0.4;
+  filter: blur(3px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 }
 
