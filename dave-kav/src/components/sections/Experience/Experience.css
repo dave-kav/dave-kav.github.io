@@ -1,6 +1,18 @@
 .experience {
   perspective: 1000px;
   padding: var(--space-3xl) 0;
+  opacity: 1;
+  transition: opacity var(--transition-base);
+}
+
+.experience.is-blurred {
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .experience.is-blurred {
+    opacity: 0.95;
+  }
 }
 
 .experience__title {
@@ -204,7 +216,7 @@
 
 @media (max-width: 768px) {
   .experience {
-    padding: 4rem 0;
+    padding: 4rem 1.5rem;
   }
 
   .experience__title {
@@ -227,40 +239,37 @@
     height: 36px;
   }
 
+  .experience__timeline {
+    position: relative;
+    padding: 0 1rem;
+  }
+
   .experience__timeline::before {
-    left: 20px;
+    display: none;
   }
 
   .experience-item {
-    width: calc(100% - 40px);
-    margin-left: 40px;
-    margin-right: 0;
+    width: 100%;
+    margin: 2rem 0;
+    padding: 0;
   }
 
   .experience-item:nth-child(odd),
   .experience-item:nth-child(even) {
-    margin-left: 40px;
-    margin-right: 0;
+    margin: 2rem 0;
   }
 
   .experience-item::before {
-    left: -32px;
+    display: none;
   }
 
   .experience-item::after {
-    left: -26px;
-    width: 26px;
+    display: none;
   }
 
-  .experience-item:nth-child(odd)::before,
-  .experience-item:nth-child(even)::before {
-    left: -32px;
-  }
-
-  .experience-item:nth-child(odd)::after,
-  .experience-item:nth-child(even)::after {
-    left: -26px;
-    width: 26px;
+  .experience-item__content {
+    margin: 0 auto;
+    max-width: calc(100% - 2rem);
   }
 }
 

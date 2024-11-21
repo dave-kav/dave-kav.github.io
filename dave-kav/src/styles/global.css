@@ -131,18 +131,20 @@ body {
 
 section {
   position: relative;
-  opacity: 0.85;
-  filter: blur(0.75px);
-  transition: opacity 0.75s cubic-bezier(0.4, 0, 0.2, 1),
-              filter 0.75s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-  will-change: opacity, filter;
+  pointer-events: auto;
 }
 
-section.is-in-view {
-  opacity: 1;
-  filter: blur(0);
-  pointer-events: auto;
+section:not(.is-in-view) {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 768px) {
+  section:not(.is-in-view) {
+    opacity: 0.95;
+    transition: opacity 0.3s ease;
+  }
 }
 
 @media (max-width: 768px) {
