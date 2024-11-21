@@ -19,17 +19,6 @@ export const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleResumeClick = (e) => {
-    e.preventDefault();
-    // Assuming resume.pdf is in the public folder
-    const link = document.createElement('a');
-    link.href = 'resume.pdf';
-    link.download = 'david-kavanagh-resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <header className={`navigation ${isScrolled ? 'is-scrolled' : ''}`}>
       <Container>
@@ -49,13 +38,6 @@ export const Navigation = () => {
             <a href="#contact" className="navigation__link">
               Contact
             </a>
-            <button 
-              onClick={handleResumeClick}
-              className="navigation__resume-btn"
-            >
-              <FontAwesomeIcon icon={faDownload} />
-              <span>Resume</span>
-            </button>
             <button 
               className="navigation__theme-toggle"
               onClick={toggleTheme}
@@ -108,17 +90,7 @@ export const Navigation = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact
-          </a>
-          <button 
-            onClick={(e) => {
-              handleResumeClick(e);
-              setIsMobileMenuOpen(false);
-            }}
-            className="navigation__mobile-resume"
-          >
-            <FontAwesomeIcon icon={faDownload} />
-            <span>Resume</span>
-          </button>
+          </a>          
         </div>
       </Container>
     </header>
