@@ -90,8 +90,8 @@ export const Experience = () => {
   return (
     <section 
       ref={sectionRef}
-      id="experience" 
-      className={`experience ${isInView ? 'is-in-view' : 'is-blurred'}`}
+      id="[section-id]" 
+      className={`[section-name] ${isInView ? 'is-in-view' : 'is-blurred'}`}
     >
       <Container>
         <h2 className="experience__title">Experience</h2>

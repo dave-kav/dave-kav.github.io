@@ -130,31 +130,18 @@ body {
 }
 
 section {
-  transition: all 0.5s ease;
+  position: relative;
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
 section.is-blurred {
-  filter: blur(5px);
-  opacity: 0.5;
+  opacity: 0.3;
+  filter: blur(4px);
+  pointer-events: none;
 }
 
 section.is-in-view {
-  filter: blur(0);
   opacity: 1;
-}
-
-/* Optional: Add a subtle scaling effect */
-section {
-  transform-origin: center;
-  transition: filter var(--transition-base), 
-              opacity var(--transition-base), 
-              transform var(--transition-base);
-}
-
-section.is-blurred {
-  transform: scale(0.98);
-}
-
-section.is-in-view {
-  transform: scale(1);
+  filter: blur(0);
+  pointer-events: auto;
 }

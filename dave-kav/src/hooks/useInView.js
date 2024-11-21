@@ -8,18 +8,13 @@ export const useInView = (ref) => {
 
     const observer = new IntersectionObserver(([entry]) => {
       setIsInView(entry.isIntersecting);
-      console.log('Section:', ref.current.id || 'unknown', 'InView:', entry.isIntersecting);
     }, {
-      threshold: 0.2,
+      threshold: [0.3],
+      rootMargin: '-100px 0px',
     });
 
     observer.observe(ref.current);
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
+    return () => observer.disconnect();
   }, [ref]);
 
   return isInView;
