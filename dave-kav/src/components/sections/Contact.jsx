@@ -47,7 +47,7 @@ export const Contact = () => {
             </a>
             <button 
               onClick={handleResumeClick}
-              className="navigation__resume-btn"
+              className="contact__link"
             >
               <FontAwesomeIcon icon={faDownload} />
               <span>Resume</span>

@@ -226,6 +226,42 @@
     width: 36px;
     height: 36px;
   }
+
+  .experience__timeline::before {
+    left: 20px;
+  }
+
+  .experience-item {
+    width: calc(100% - 40px);
+    margin-left: 40px;
+    margin-right: 0;
+  }
+
+  .experience-item:nth-child(odd),
+  .experience-item:nth-child(even) {
+    margin-left: 40px;
+    margin-right: 0;
+  }
+
+  .experience-item::before {
+    left: -32px;
+  }
+
+  .experience-item::after {
+    left: -26px;
+    width: 26px;
+  }
+
+  .experience-item:nth-child(odd)::before,
+  .experience-item:nth-child(even)::before {
+    left: -32px;
+  }
+
+  .experience-item:nth-child(odd)::after,
+  .experience-item:nth-child(even)::after {
+    left: -26px;
+    width: 26px;
+  }
 }
 
 .experience-item__content {

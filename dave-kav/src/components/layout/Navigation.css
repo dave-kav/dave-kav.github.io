@@ -8,9 +8,12 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 1.25rem 0;
     background: var(--color-background);
     transition: all 0.3s ease;
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
   }
   
   .navigation.is-scrolled {
@@ -152,10 +155,13 @@
   
     .navigation__mobile-toggle {
       display: flex;
+      height: 18px;
+      margin-left: 1rem;
     }
   
     .navigation__mobile {
       display: block;
+      top: var(--nav-height);
     }
   }
   

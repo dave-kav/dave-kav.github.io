@@ -67,23 +67,25 @@
   }
 }
   
-.navigation__resume-btn {
+.contact__resume-btn {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   background: var(--color-foreground);
   color: var(--color-text-primary);
-  font-size: 0.875rem;
+  font-size: var(--text-base);
   font-weight: 500;
   cursor: pointer;
   transition: var(--transition-base);
+  width: 100%;
+  justify-content: center;
 }
 
-.navigation__resume-btn:hover {
+.contact__resume-btn:hover {
+  transform: translateY(-2px);
   border-color: var(--color-accent);
   color: var(--color-accent);
-  transform: translateY(-2px);
 }
