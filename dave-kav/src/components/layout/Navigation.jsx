@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Container } from '../ui/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon, faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../context/ThemeContext';
 import './Navigation.css';
 
