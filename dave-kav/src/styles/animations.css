@@ -66,3 +66,15 @@
     transition: none;
   }
 }
+
+.experience-card-wrapper {
+  transition-delay: calc(var(--index) * 100ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-card-wrapper {
+    transition: none;
+    opacity: 1;
+    transform: none !important;
+  }
+}

@@ -9,8 +9,8 @@ export const useInView = (ref) => {
     const observer = new IntersectionObserver(([entry]) => {
       setIsInView(entry.isIntersecting);
     }, {
-      threshold: [0.2],
-      rootMargin: '-15% 0px',
+      threshold: 0.15,
+      rootMargin: '-5% 0px',
     });
 
     observer.observe(ref.current);

@@ -20,6 +20,8 @@
   --text-xl: 1.25rem;    /* 20px */
   --text-2xl: 1.5rem;    /* 24px */
   --text-3xl: 2rem;      /* 32px */
+  --color-foreground-rgb: 255, 255, 255;
+  --color-border-rgb: 0, 0, 0;
 }
 
 /* Light theme */
@@ -42,4 +44,6 @@
   --color-text-secondary: #a0a0a0;
   --color-accent: #a3a3a3;
   --color-border: #333333;
+  --color-foreground-rgb: 30, 30, 30;
+  --color-border-rgb: 255, 255, 255;
 }

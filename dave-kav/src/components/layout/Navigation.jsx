@@ -35,6 +35,12 @@ export const Navigation = () => {
             <a href="#experience" className="navigation__link">
               Experience
             </a>
+            <a href="#education" className="navigation__link">
+              Education
+            </a>
+            <a href="#projects" className="navigation__link">
+              Projects
+            </a>
             <a href="#contact" className="navigation__link">
               Contact
             </a>

@@ -46,63 +46,6 @@
   transform: translateZ(-10px);
 }
 
-.experience-item {
-  position: relative;
-  width: 45%;
-  margin: 2rem 0;
-  transform-style: preserve-3d;
-  padding: 0;
-}
-
-.experience-item:nth-child(odd) {
-  margin-left: auto;
-  transform-origin: left center;
-}
-
-.experience-item:nth-child(even) {
-  margin-right: auto;
-  transform-origin: right center;
-}
-
-/* Add connectors */
-.experience-item::after {
-  content: '';
-  position: absolute;
-  top: 2rem;
-  width: 40px;
-  height: 2px;
-  background: var(--color-accent);
-}
-
-.experience-item:nth-child(odd)::after {
-  left: -40px;
-}
-
-.experience-item:nth-child(even)::after {
-  right: -40px;
-}
-
-/* Add timeline dots */
-.experience-item::before {
-  content: '';
-  position: absolute;
-  top: 1.75rem;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  border: 2px solid var(--color-background);
-  z-index: 1;
-}
-
-.experience-item:nth-child(odd)::before {
-  left: -46px;
-}
-
-.experience-item:nth-child(even)::before {
-  right: -46px;
-}
-
 .experience-item__header {
   margin: 0;
   padding: 2rem 2rem 1.5rem;
@@ -300,4 +243,80 @@
   width: 50px;
   height: 2px;
   background: var(--color-accent);
+}
+
+.experience-card-wrapper {
+  position: relative;
+  width: 45%;
+  margin: 2rem 0;
+  transform-style: preserve-3d;
+}
+
+.experience-card-wrapper:nth-child(odd) {
+  margin-left: auto;
+}
+
+.experience-card-wrapper:nth-child(even) {
+  margin-right: auto;
+}
+
+/* Add connectors to wrapper */
+.experience-card-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  width: 40px;
+  height: 2px;
+  background: var(--color-accent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card-wrapper:nth-child(odd)::after {
+  left: -40px;
+}
+
+.experience-card-wrapper:nth-child(even)::after {
+  right: -40px;
+}
+
+/* Timeline dots */
+.experience-card-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 1.75rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2px solid var(--color-background);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card-wrapper:nth-child(odd)::before {
+  left: -46px;
+}
+
+.experience-card-wrapper:nth-child(even)::before {
+  right: -46px;
+}
+
+/* Show connectors and dots when in view */
+.experience-card-wrapper[data-animate="true"]::before,
+.experience-card-wrapper[data-animate="true"]::after {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .experience-card-wrapper {
+    width: 100%;
+    margin: 2rem 0 !important;
+  }
+
+  .experience-card-wrapper::before,
+  .experience-card-wrapper::after {
+    display: none;
+  }
 }

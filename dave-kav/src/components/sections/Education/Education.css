@@ -1,0 +1,170 @@
+.education {
+  perspective: 1000px;
+  padding: var(--space-3xl) 0;
+  opacity: 1;
+  transition: opacity var(--transition-base);
+}
+
+.education.is-blurred {
+  opacity: 0.85;
+}
+
+.education__title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  text-align: center;
+  color: var(--color-text-primary);
+}
+
+.education__timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+.education-card-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.education-item {
+  position: relative;
+  padding: 0;
+  backdrop-filter: blur(10px);
+}
+
+.education-item__header {
+  margin: 0;
+  padding: 2rem 2rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.education-item__school {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.education-item__logo-wrapper {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: white;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.education-item__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.education-item:hover .education-item__logo {
+  filter: grayscale(0%);
+}
+
+.education-item__info {
+  flex-grow: 1;
+}
+
+.education-item__info h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.education-item__degree {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.education-item__period {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.education-item__content {
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  padding: 1.5rem 2rem;
+}
+
+.education-item__description {
+  margin-bottom: 1.5rem;
+}
+
+.education-item__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.education-item__highlights li {
+  position: relative;
+  padding-left: 1.25rem;
+  line-height: 1.5;
+}
+
+.education-item__highlights li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.education-item__courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 768px) {
+  .education {
+    padding: 4rem 1.5rem;
+  }
+
+  .education__title {
+    font-size: 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .education-item__school {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .education-item__logo-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .education-item__info h3 {
+    font-size: 1.5rem;
+  }
+
+  .education-item__degree {
+    font-size: 1.125rem;
+  }
+}

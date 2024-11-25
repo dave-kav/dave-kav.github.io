@@ -19,10 +19,11 @@ export const Experience = () => {
         <h2 className="experience__title">Experience</h2>
         
         <div className="experience__timeline">
-          {experienceData.experiences.map((experience) => (
+          {experienceData.experiences.map((experience, index) => (
             <ExperienceCard 
               key={experience.id} 
-              experience={experience} 
+              experience={experience}
+              index={index}
             />
           ))}
         </div>

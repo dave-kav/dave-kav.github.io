@@ -9,7 +9,7 @@ export const Footer = () => {
       <Container>
         <div className="footer__content">
           <p className="footer__text">
-            Built with React, CSS, JS, and a lot of Claude 3.5
+            Built with React, CSS, and Claude 3.5
           </p>
           <p className="footer__copyright">
             © {currentYear} David Kavanagh. All rights reserved.
