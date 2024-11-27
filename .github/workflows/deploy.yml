@@ -34,6 +34,8 @@ jobs:
 
       - name: Move Resume PDF
         run: |
+          sudo apt-get install tree -y
+          tree
           mv dave-kav/src/assets/resume/resume.pdf dave-kav/build/
 
       - name: Create CNAME
