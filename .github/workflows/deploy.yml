@@ -26,11 +26,26 @@ jobs:
       - name: Build React App
         run: npm run build
 
+      - name: List Files Before
+        run: |
+          sudo apt-get install tree -y
+          echo "=== Current directory structure ==="
+          tree
+          echo "=== Current working directory ==="
+          pwd
+
       - name: Convert Resume to PDF
         id: convert-to-pdf
         uses: closoco/pdflatex-action@v1.0.0
         with:
           texFile: dave-kav/src/assets/resume/resume.tex
+
+      - name: List Files After
+        run: |
+          echo "=== Current directory structure ==="
+          tree
+          echo "=== Looking for PDF ==="
+          find . -name "*.pdf"
 
       - name: Upload PDF
         uses: actions/upload-artifact@v3
@@ -43,12 +58,6 @@ jobs:
         with:
           name: resume.pdf
           path: dave-kav/build
-
-      # Optional debugging step
-      - name: List Files
-        run: |
-          sudo apt-get install tree -y
-          tree
 
       - name: Create CNAME
         run: echo "www.dave-kav.dev" > build/CNAME
