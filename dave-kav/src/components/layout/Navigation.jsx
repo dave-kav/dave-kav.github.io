@@ -23,13 +23,13 @@ export const Navigation = () => {
     <header className={`navigation ${isScrolled ? 'is-scrolled' : ''}`}>
       <Container>
         <nav className="navigation__inner">
-          <a href="#" className="navigation__logo">
+          <a href="/" className="navigation__logo">
             <img src="/logo.svg" alt="DK Logo" className="navigation__logo-image" />
           </a>
 
           {/* Desktop Navigation */}
           <div className="navigation__desktop">
-            <a href="#" className="navigation__link">
+            <a href="/" className="navigation__link">
               Home
             </a>
             <a href="#experience" className="navigation__link">
@@ -77,7 +77,7 @@ export const Navigation = () => {
         {/* Mobile Navigation */}
         <div className={`navigation__mobile ${isMobileMenuOpen ? 'is-open' : ''}`}>
           <a
-            href="#"
+            href="/"
             className="navigation__mobile-link"
             onClick={() => setIsMobileMenuOpen(false)}
           >
