@@ -7,6 +7,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./dave-kav
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,10 +37,13 @@ jobs:
           pdflatex resume.tex
           mv resume.pdf ../../../build/
 
+      - name: Create CNAME
+        run: echo "www.dave-kav.dev" > build/CNAME
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build
+          folder: dave-kav/build
           branch: gh-pages
           clean: true
 
