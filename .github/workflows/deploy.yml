@@ -31,6 +31,9 @@ jobs:
         with:
           scheme: full
 
+      - name: Add TeX Live to PATH
+        run: echo "/usr/local/texlive/2023/bin/x86_64-linux" >> $GITHUB_PATH
+
       - name: Build Resume PDF
         run: |
           cd src/assets/resume
