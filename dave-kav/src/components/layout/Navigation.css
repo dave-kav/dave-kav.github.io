@@ -36,12 +36,15 @@
   .navigation__logo-image {
     height: 24px;
     width: auto;
-    filter: invert(0%);
-    transition: filter var(--transition-base);
+    transition: fill 0.15s ease;
   }
   
-  :root[data-theme="dark"] .navigation__logo-image {
-    filter: invert(100%);
+  [data-theme="light"] .navigation__logo-image path {
+    fill: var(--color-text-primary);
+  }
+  
+  [data-theme="dark"] .navigation__logo-image path {
+    fill: var(--color-text-primary);
   }
   
   .navigation__desktop {

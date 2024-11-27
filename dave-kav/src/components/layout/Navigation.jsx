@@ -89,6 +89,20 @@ export const Navigation = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Experience
+          </a>          
+          <a
+            href="#education"
+            className="navigation__mobile-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Education
+          </a>
+          <a
+            href="#projects"
+            className="navigation__mobile-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Projects
           </a>
           <a
             href="#contact"

@@ -1,38 +1,53 @@
 {
-    "projects": [
-        {
-            "id": 1,
-            "title": "This Website",
-            "description": "This website is built with React, CSS, and a lot of Claude 3.5",
-            "repo": "https://github.com/dave-kav/dave-kav.github.io/tree/main/dave-kav",
-            "tech": [
-                "React",
-                "Framer Motion",
-                "CSS"
-            ],
-            "highlights": [
-                "Implemented smooth scroll animations using Framer Motion",
-                "Built custom React hooks for intersection observer and dark mode",
-                "Designed and implemented responsive glass-morphism UI"
-            ],
-            "thumbnail": "logo.svg"
-        },
-        {
-            "id": 2,
-            "title": "Movie Info Slack App",
-            "description": "A Slack app that allows users to search for movie information and get recommendations",
-            "repo": "https://github.com/dave-kav/slack-app",
-            "tech": [
-                "Java",
-                "Spring Boot",
-                "Slack",
-                "Bolt SDK"
-            ],
-            "thumbnail": "logo.svg",
-            "highlights": [
-                "Developed a Slack app using Java and Spring Boot that allows users to search for movie information and get recommendations",
-                "Utilized the TMDB API to fetch movie data and the OpenAI API to generate recommendations"
-            ]
-        }
-    ]
+  "projects": [
+    {
+      "id": 1,
+      "title": "This Website",
+      "description": "This website is built with React, CSS, and Claude 3.5",
+      "repo": "https://github.com/dave-kav/dave-kav.github.io/tree/main/dave-kav",
+      "tech": [
+        "React",
+        "Framer Motion",
+        "CSS"
+      ],
+      "highlights": [
+        "Implemented smooth scroll animations using Framer Motion",
+        "Built custom React hooks for intersection observer and dark mode",
+        "Designed and implemented responsive glass-morphism UI"
+      ],
+      "thumbnail": "logo.svg"
+    },
+    {
+      "id": 2,
+      "title": "Irish Rail Timetable",
+      "description": "A Raycast extension that allows you to search for Irish Rail live departure times",
+      "repo": "https://github.com/dave-kav/raycast-irish-rail",
+      "tech": [
+        "Typescript",
+        "Raycast SDK"
+      ],
+      "highlights": [
+        "Developed a Raycast extension that allows users to search for Irish Rail live departure times",
+        "Utilized the Irish Rail API to fetch live data"
+      ],
+      "thumbnail": "logos/raycast.svg"
+    },
+    {
+      "id": 3,
+      "title": "Movie Info Slack App",
+      "description": "A Slack app that allows users to search for movie information and get recommendations",
+      "repo": "https://github.com/dave-kav/slack-app",
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "Slack",
+        "Bolt SDK"
+      ],
+      "thumbnail": "logos/slack.svg",
+      "highlights": [
+        "Developed a Slack app using Java and Spring Boot that allows users to search for movie information and get recommendations",
+        "Utilized the TMDB API to fetch movie data and the OpenAI API to generate recommendations"
+      ]
+    }
+  ]
 }
