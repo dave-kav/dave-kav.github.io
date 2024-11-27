@@ -30,12 +30,11 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: |
-            src/assets/resume/resume.tex
+            dave-kav/src/assets/resume/resume.tex
 
       - name: Move Resume PDF
         run: |
-          cd src/assets/resume
-          mv resume.pdf ../../../build/
+          mv dave-kav/src/assets/resume/resume.pdf dave-kav/build/
 
       - name: Create CNAME
         run: echo "www.dave-kav.dev" > build/CNAME
