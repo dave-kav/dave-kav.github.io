@@ -29,8 +29,14 @@ jobs:
       - name: Build Resume PDF
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: |
-            dave-kav/src/assets/resume/resume.tex
+          root_file: dave-kav/src/assets/resume/resume.tex
+          working_directory: dave-kav/src/assets/resume
+          continue_on_error: true
+
+      - name: List Files
+        run: |
+          sudo apt-get install tree -y
+          tree
 
       - name: Move Resume PDF
         run: |
