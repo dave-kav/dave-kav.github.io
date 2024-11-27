@@ -26,18 +26,15 @@ jobs:
       - name: Build React App
         run: npm run build
 
-      - name: Setup TeX Live
-        uses: xu-cheng/texlive-action@v2
-        with:
-          scheme: full
-
-      - name: Add TeX Live to PATH
-        run: echo "/usr/local/texlive/2023/bin/x86_64-linux" >> $GITHUB_PATH
-
       - name: Build Resume PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: |
+            resume.tex
+
+      - name: Move Resume PDF
         run: |
           cd src/assets/resume
-          pdflatex resume.tex
           mv resume.pdf ../../../build/
 
       - name: Create CNAME
