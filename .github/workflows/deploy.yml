@@ -32,9 +32,17 @@ jobs:
         with:
           texFile: dave-kav/src/assets/resume/resume.tex
 
-      - name: Copy PDF to build directory
-        run: |
-          cp resume.pdf dave-kav/build/
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: resume.pdf
+          path: resume.pdf
+
+      - name: Download PDF to build directory
+        uses: actions/download-artifact@v3
+        with:
+          name: resume.pdf
+          path: dave-kav/build
 
       - name: Create CNAME
         run: echo "www.dave-kav.dev" > build/CNAME
