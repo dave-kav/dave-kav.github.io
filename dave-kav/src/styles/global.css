@@ -170,11 +170,3 @@ section:not(.is-in-view) {
 .hero__content {
   padding-top: 4rem;
 }
-
-[data-theme="light"] .st0 {
-  fill: #1D1C1D;  /* Slack's dark color */
-}
-
-[data-theme="dark"] .st0 {
-  fill: #FFFFFF;  /* Original white color */
-}

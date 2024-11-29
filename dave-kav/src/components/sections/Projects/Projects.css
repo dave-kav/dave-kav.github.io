@@ -63,6 +63,12 @@
   max-height: 80%;
   object-fit: contain;
   transition: transform 0.3s ease;
+  filter: invert(0%);
+  transition: filter var(--transition-base);
+}
+
+:root[data-theme="dark"] .project-item__thumbnail img {
+  filter: invert(100%);
 }
 
 .project-item:hover .project-item__thumbnail img {
