@@ -1,13 +1,29 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, FC } from 'react';
+import { motion, Variants } from 'framer-motion';
 import { Card } from '../../ui/Card';
 import { useInView } from '../../../hooks/useInView';
+import React from 'react';
 
-export const ExperienceCard = ({ experience, index }) => {
-  const cardRef = useRef(null);
+interface Experience {
+  logo: string;
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  highlights: string[];
+  technologies: string[];
+}
+
+interface ExperienceCardProps {
+  experience: Experience;
+  index: number;
+}
+
+export const ExperienceCard: FC<ExperienceCardProps> = ({ experience, index }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef);
 
-  const variants = {
+  const variants: Variants = {
     hidden: index % 2 === 0 
       ? { x: -50, opacity: 0 }
       : { x: 50, opacity: 0 },

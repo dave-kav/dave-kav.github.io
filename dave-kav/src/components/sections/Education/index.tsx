@@ -1,12 +1,29 @@
-import { useRef } from 'react';
+import { useRef, FC } from 'react';
 import { Container } from '../../ui/Container';
 import { EducationCard } from './EducationCard';
 import educationData from '../../../data/education.json';
 import './Education.css';
 import { useInView } from '../../../hooks/useInView';
+import React from 'react';
 
-export const Education = () => {
-  const sectionRef = useRef(null);
+interface EducationItem {
+  id: number;
+  logo: string;
+  school: string;
+  degree: string;
+  period: string;
+  description: string;
+  highlights: string[];
+  courses: string[];
+  location: string;
+}
+
+interface EducationData {
+  education: EducationItem[];
+}
+
+export const Education: FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef);
 
   return (
@@ -18,7 +35,7 @@ export const Education = () => {
       <Container>
         <h2 className="education__title">Education</h2>
         <div className="education__timeline">
-          {educationData.education.map((edu, index) => (
+          {(educationData as EducationData).education.map((edu, index) => (
             <EducationCard 
               key={edu.id} 
               education={edu}

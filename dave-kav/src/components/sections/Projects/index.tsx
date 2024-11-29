@@ -1,12 +1,27 @@
-import { useRef } from 'react';
+import { useRef, FC } from 'react';
 import { Container } from '../../ui/Container';
 import { ProjectCard } from './ProjectCard';
 import projectsData from '../../../data/projects.json';
 import './Projects.css';
 import { useInView } from '../../../hooks/useInView';
+import React from 'react';
 
-export const Projects = () => {
-  const sectionRef = useRef(null);
+interface Project {
+  id: number;
+  thumbnail: string;
+  title: string;
+  description: string;
+  highlights: string[];
+  tech: string[];
+  repo: string;
+}
+
+interface ProjectsData {
+  projects: Project[];
+}
+
+export const Projects: FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef);
 
   return (
@@ -18,7 +33,7 @@ export const Projects = () => {
       <Container>
         <h2 className="projects__title">Featured Projects</h2>
         <div className="projects__grid">
-          {projectsData.projects.map((project, index) => (
+          {(projectsData as ProjectsData).projects.map((project, index) => (
             <ProjectCard 
               key={project.id} 
               project={project}

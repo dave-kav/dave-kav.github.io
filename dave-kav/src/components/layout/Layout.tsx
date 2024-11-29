@@ -1,8 +1,14 @@
+import { FC, ReactNode } from 'react';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
 import './Layout.css';
+import React from 'react';
 
-export const Layout = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="layout">
       <Navigation />

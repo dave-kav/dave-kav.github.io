@@ -1,15 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, RefObject } from 'react';
+
+interface IntersectionObserverOptions {
+  threshold?: number;
+  root?: Element | Document | null;
+  rootMargin?: string;
+  freezeOnceVisible?: boolean;
+}
 
 export const useIntersectionObserver = (
-  elementRef,
+  elementRef: RefObject<Element>,
   {
     threshold = 0,
     root = null,
     rootMargin = '0px',
     freezeOnceVisible = false
-  } = {}
-) => {
-  const [entry, setEntry] = useState();
+  }: IntersectionObserverOptions = {}
+): IntersectionObserverEntry | undefined => {
+  const [entry, setEntry] = useState<IntersectionObserverEntry>();
 
   useEffect(() => {
     const node = elementRef?.current;
@@ -18,7 +25,7 @@ export const useIntersectionObserver = (
     if (!node || frozen) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => setEntry(entry),
+      ([entry]: IntersectionObserverEntry[]) => setEntry(entry),
       { threshold, root, rootMargin }
     );
 

@@ -1,8 +1,10 @@
+import { FC } from 'react';
 import { Container } from '../ui/Container';
 import './Footer.css';
+import React from 'react';
 
-export const Footer = () => {
-  const currentYear = new Date().getFullYear();
+export const Footer: FC = () => {
+  const currentYear: number = new Date().getFullYear();
   
   return (
     <footer className="footer">

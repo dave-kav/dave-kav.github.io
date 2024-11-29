@@ -1,13 +1,28 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, FC } from 'react';
+import { motion, Variants } from 'framer-motion';
 import { Card } from '../../ui/Card';
 import { useInView } from '../../../hooks/useInView';
+import React from 'react';
 
-export const ProjectCard = ({ project, index }) => {
-  const cardRef = useRef(null);
+interface Project {
+  thumbnail: string;
+  title: string;
+  description: string;
+  highlights: string[];
+  tech: string[];
+  repo: string;
+}
+
+interface ProjectCardProps {
+  project: Project;
+  index: number;
+}
+
+export const ProjectCard: FC<ProjectCardProps> = ({ project, index }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef);
 
-  const variants = {
+  const variants: Variants = {
     hidden: { 
       y: 50,
       opacity: 0,

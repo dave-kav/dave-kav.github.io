@@ -1,7 +1,16 @@
 import { useState, useEffect } from 'react';
 
-export const useScrollPosition = () => {
-  const [scrollPosition, setScrollPosition] = useState({
+type ScrollDirection = 'up' | 'down';
+
+interface ScrollPosition {
+  x: number;
+  y: number;
+  lastY: number;
+  direction: ScrollDirection;
+}
+
+export const useScrollPosition = (): ScrollPosition => {
+  const [scrollPosition, setScrollPosition] = useState<ScrollPosition>({
     x: 0,
     y: 0,
     lastY: 0,
@@ -11,7 +20,7 @@ export const useScrollPosition = () => {
   useEffect(() => {
     let ticking = false;
 
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           const currentY = window.scrollY;

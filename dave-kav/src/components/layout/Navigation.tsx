@@ -1,23 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { Container } from '../ui/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../context/ThemeContext';
 import './Navigation.css';
+import React from 'react';
 
-export const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+export const Navigation: FC = () => {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = (): void => {
       setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleMobileMenuClick = (): void => {
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header className={`navigation ${isScrolled ? 'is-scrolled' : ''}`}>
@@ -79,35 +84,35 @@ export const Navigation = () => {
           <a
             href="/"
             className="navigation__mobile-link"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleMobileMenuClick}
           >
             Home
           </a>
           <a
             href="#experience"
             className="navigation__mobile-link"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleMobileMenuClick}
           >
             Experience
           </a>          
           <a
             href="#education"
             className="navigation__mobile-link"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleMobileMenuClick}
           >
             Education
           </a>
           <a
             href="#projects"
             className="navigation__mobile-link"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleMobileMenuClick}
           >
             Projects
           </a>
           <a
             href="#contact"
             className="navigation__mobile-link"
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={handleMobileMenuClick}
           >
             Contact
           </a>          

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "tsconfig.json"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "build:watch": {
+      "dependsOn": [
+        "^build:watch"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "clean": {
+      "cache": false
+    },
+    "deploy": {
+      "dependsOn": [
+        "build"
+      ],
+      "cache": false
+    },
+    "lint": {},
+    "lint:fix": {
+      "outputs": [
+        "src/**",
+        "*.js"
+      ]
+    },
+    "schema:push": {
+      "dependsOn": [
+        "^build"
+      ],
+      "cache": false
+    }
+  }
+}

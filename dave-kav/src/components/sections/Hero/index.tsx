@@ -1,16 +1,19 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef, FC } from 'react';
+import { motion, useScroll, useTransform, MotionStyle } from 'framer-motion';
 import { Container } from '../../ui/Container';
 import { useInView } from '../../../hooks/useInView';
 import './Hero.css';
+import React from 'react';
 
-export const Hero = () => {
-  const sectionRef = useRef(null);
+export const Hero: FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef);
   const { scrollYProgress } = useScroll();
   
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  const motionStyle: MotionStyle = { y, opacity };
 
   return (
     <section 
@@ -20,7 +23,7 @@ export const Hero = () => {
       <Container>
         <motion.div 
           className="hero__content"
-          style={{ y, opacity }}
+          style={motionStyle}
         >
           <div className="hero__text">
             <motion.span 

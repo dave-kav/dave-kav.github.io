@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, MouseEvent } from 'react';
 import { Container } from '../ui/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -6,12 +6,13 @@ import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useInView } from '../../hooks/useInView';
 import './Contact.css';
 import { SOCIAL_LINKS } from '../../utils/constants';
+import React from 'react';
 
 export const Contact = () => {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef);
 
-  const handleResumeClick = (e) => {
+  const handleResumeClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const link = document.createElement('a');
     link.href = 'resume.pdf';

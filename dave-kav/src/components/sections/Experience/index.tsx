@@ -1,12 +1,28 @@
-import { useRef } from 'react';
+import { useRef, FC } from 'react';
 import { Container } from '../../ui/Container';
 import { ExperienceCard } from './ExperienceCard';
 import experienceData from '../../../data/experience.json';
 import './Experience.css';
 import { useInView } from '../../../hooks/useInView';
+import React from 'react';
 
-export const Experience = () => {
-  const sectionRef = useRef(null);
+interface ExperienceItem {
+  id: number;
+  logo: string;
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  highlights: string[];
+  technologies: string[];
+}
+
+interface ExperienceData {
+  experiences: ExperienceItem[];
+}
+
+export const Experience: FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef);
 
   return (
@@ -19,7 +35,7 @@ export const Experience = () => {
         <h2 className="experience__title">Experience</h2>
         
         <div className="experience__timeline">
-          {experienceData.experiences.map((experience, index) => (
+          {(experienceData as ExperienceData).experiences.map((experience, index) => (
             <ExperienceCard 
               key={experience.id} 
               experience={experience}

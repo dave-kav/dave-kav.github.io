@@ -9,6 +9,7 @@ import './styles/variables.css';
 import './styles/global.css';
 import './styles/animations.css';
 import './App.css';
+import React from 'react';
 
 function App() {
   return (

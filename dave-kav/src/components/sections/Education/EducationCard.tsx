@@ -1,13 +1,29 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, FC } from 'react';
+import { motion, Variants } from 'framer-motion';
 import { Card } from '../../ui/Card';
 import { useInView } from '../../../hooks/useInView';
+import React from 'react';
 
-export const EducationCard = ({ education, index }) => {
-  const cardRef = useRef(null);
+interface Education {
+  logo: string;
+  school: string;
+  degree: string;
+  period: string;
+  description: string;
+  highlights: string[];
+  courses: string[];
+}
+
+interface EducationCardProps {
+  education: Education;
+  index: number;
+}
+
+export const EducationCard: FC<EducationCardProps> = ({ education, index }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef);
 
-  const variants = {
+  const variants: Variants = {
     hidden: { 
       y: 50,
       opacity: 0,
