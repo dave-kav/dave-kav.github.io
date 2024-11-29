@@ -32,19 +32,16 @@
     display: flex;
     align-items: center;
   }
-  
+    
   .navigation__logo-image {
     height: 24px;
     width: auto;
-    transition: fill 0.15s ease;
+    filter: invert(0%);
+    transition: filter var(--transition-base);
   }
   
-  [data-theme="light"] .navigation__logo-image path {
-    fill: var(--color-text-primary);
-  }
-  
-  [data-theme="dark"] .navigation__logo-image path {
-    fill: var(--color-text-primary);
+  :root[data-theme="dark"] .navigation__logo-image {
+    filter: invert(100%);
   }
   
   .navigation__desktop {
