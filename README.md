@@ -1,6 +1,6 @@
 # dave-kav.github.io
 
-Personal website and portfolio for Dave Kavanagh, hosted at [www.dave-kav.dev](https://www.dave-kav.dev).
+Personal website and portfolio for Dave Kavanagh, hosted at [www.dave-kav.com](https://www.dave-kav.com).
 
 ## Project Structure
 
