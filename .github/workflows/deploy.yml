@@ -47,7 +47,7 @@ jobs:
           path: dave-kav/build
 
       - name: Create CNAME
-        run: echo "www.dave-kav.dev" > build/CNAME
+        run: echo "www.dave-kav.com" > build/CNAME
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4

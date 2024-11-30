@@ -7,5 +7,5 @@ interface SocialLinks {
 export const SOCIAL_LINKS: SocialLinks = {
   github: 'https://github.com/dave-kav',
   linkedin: 'https://linkedin.com/in/dave-kav',
-  email: 'work@dave-kav.dev'
+  email: 'work@dave-kav.com'
 } as const;
