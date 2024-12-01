@@ -5,6 +5,8 @@ import projectsData from '../../../data/projects.json';
 import './Projects.css';
 import { useInView } from '../../../hooks/useInView';
 import React from 'react';
+import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface Project {
   id: number;
@@ -31,7 +33,10 @@ export const Projects: FC = () => {
       className={`projects ${isInView ? 'is-in-view' : 'is-blurred'}`}
     >
       <Container>
-        <h2 className="projects__title">Featured Projects</h2>
+        <h2 className="section-title">
+          <FontAwesomeIcon icon={faCode} />
+          Projects
+        </h2>
         <div className="projects__grid">
           {(projectsData as ProjectsData).projects.map((project, index) => (
             <ProjectCard 

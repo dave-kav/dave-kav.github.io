@@ -5,6 +5,8 @@ import educationData from '../../../data/education.json';
 import './Education.css';
 import { useInView } from '../../../hooks/useInView';
 import React from 'react';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface EducationItem {
   id: number;
@@ -33,7 +35,10 @@ export const Education: FC = () => {
       className={`education ${isInView ? 'is-in-view' : 'is-blurred'}`}
     >
       <Container>
-        <h2 className="education__title">Education</h2>
+        <h2 className="section-title">
+          <FontAwesomeIcon icon={faGraduationCap} />
+          Education
+        </h2>
         <div className="education__timeline">
           {(educationData as EducationData).education.map((edu, index) => (
             <EducationCard 
