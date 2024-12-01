@@ -37,6 +37,9 @@ export const Navigation: FC = () => {
             <a href="/" className="navigation__link">
               Home
             </a>
+            <a href="/blogs" className="navigation__link">
+              Blogs
+            </a>
             <a href="#experience" className="navigation__link">
               Experience
             </a>
@@ -87,6 +90,13 @@ export const Navigation: FC = () => {
             onClick={handleMobileMenuClick}
           >
             Home
+          </a>
+          <a
+            href="/blogs"
+            className="navigation__mobile-link"
+            onClick={handleMobileMenuClick}
+          >
+            Blogs
           </a>
           <a
             href="#experience"

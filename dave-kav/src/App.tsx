@@ -1,26 +1,26 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { Layout } from './components/layout/Layout';
-import { Hero } from './components/sections/Hero';
-import { Experience } from './components/sections/Experience';
-import { Education } from './components/sections/Education';
-import { Projects } from './components/sections/Projects';
-import { Contact } from './components/sections/Contact';
+import HomePage from './pages/HomePage';
+import BlogsPage from './pages/BlogsPage';
 import './styles/variables.css';
 import './styles/global.css';
 import './styles/animations.css';
+import './styles/pages.css';
 import './App.css';
-import React from 'react';
 
 function App() {
   return (
     <ThemeProvider>
-      <Layout>
-        <Hero />
-        <Experience />
-        <Education />
-        <Projects />
-        <Contact />
-      </Layout>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/blogs" element={<BlogsPage />} />
+          </Routes>
+        </Layout>
+      </Router>
     </ThemeProvider>
   );
 }
