@@ -34,7 +34,11 @@ export const Navigation: FC = () => {
       <Container>
         <div className="navigation__inner">
           <Link to="/" className="navigation__logo">
-            DK
+            <img 
+              src="/logo.svg" 
+              alt="DK Logo" 
+              className="navigation__logo-image"
+            />
           </Link>
 
           <div className="navigation__desktop">
