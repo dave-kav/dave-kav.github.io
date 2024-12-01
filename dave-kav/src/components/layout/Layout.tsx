@@ -1,21 +1,24 @@
-import { FC, ReactNode } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
+import { BackToTop } from '../ui/BackToTop';
+import { useLocation } from 'react-router-dom';
 import './Layout.css';
-import React from 'react';
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export const Layout: FC<LayoutProps> = ({ children }) => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
     <div className="layout">
       <Navigation />
-      <main className="layout__main">
-        {children}
-      </main>
+      <main>{children}</main>
       <Footer />
+      {isHomePage && <BackToTop />}
     </div>
   );
 };

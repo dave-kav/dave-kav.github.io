@@ -17,6 +17,7 @@ export const Hero: FC = () => {
 
   return (
     <section 
+      id="hero"
       ref={sectionRef}
       className={`hero ${isInView ? 'is-in-view' : ''}`}
     >

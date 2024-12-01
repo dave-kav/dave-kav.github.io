@@ -1,123 +1,105 @@
-import { useState, useEffect, FC } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import { Container } from '../ui/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { useTheme } from '../../context/ThemeContext';
+import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
-import React from 'react';
 
 export const Navigation: FC = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+  const isBlogsPage = location.pathname === '/blogs';
 
   useEffect(() => {
-    const handleScroll = (): void => {
-      setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMobileMenuClick = (): void => {
-    setIsMobileMenuOpen(false);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
-    <header className={`navigation ${isScrolled ? 'is-scrolled' : ''}`}>
+    <nav className={`navigation ${isScrolled ? 'is-scrolled' : ''}`}>
       <Container>
-        <nav className="navigation__inner">
-          <a href="/" className="navigation__logo">
-            <img src="/logo.svg" alt="DK Logo" className="navigation__logo-image" />
-          </a>
+        <div className="navigation__inner">
+          <Link to="/" className="navigation__logo">
+            <img 
+              src="/logo.svg" 
+              alt="DK Logo" 
+              className="navigation__logo-image"
+            />
+          </Link>
 
-          {/* Desktop Navigation */}
           <div className="navigation__desktop">
-            <a href="/" className="navigation__link">
-              Home
-            </a>
-            <a href="#experience" className="navigation__link">
-              Experience
-            </a>
-            <a href="#education" className="navigation__link">
-              Education
-            </a>
-            <a href="#projects" className="navigation__link">
-              Projects
-            </a>
-            <a href="#contact" className="navigation__link">
-              Contact
-            </a>
-            <button 
-              className="navigation__theme-toggle"
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            >
-              <FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} />
-            </button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="navigation__mobile-controls">
-            <button 
-              className="navigation__theme-toggle"
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            >
-              <FontAwesomeIcon icon={theme === 'light' ? faMoon : faSun} />
-            </button>
+            {!isHomePage && (
+              <Link to="/" className="navigation__link">
+                Home
+              </Link>
+            )}
+            {!isBlogsPage && (
+              <Link to="/blogs" className="navigation__link">
+                Blogs
+              </Link>
+            )}
+            {isHomePage && (
+              <>
+                <a 
+                  onClick={() => scrollToSection('experience')} 
+                  className="navigation__link"
+                >
+                  Experience
+                </a>
+                <a 
+                  onClick={() => scrollToSection('education')} 
+                  className="navigation__link"
+                >
+                  Education
+                </a>
+                <a 
+                  onClick={() => scrollToSection('projects')} 
+                  className="navigation__link"
+                >
+                  Projects
+                </a>
+                <a 
+                  onClick={() => scrollToSection('contact')} 
+                  className="navigation__link"
+                >
+                  Contact
+                </a>
+              </>
+            )}
             <button
-              className={`navigation__mobile-toggle ${isMobileMenuOpen ? 'is-active' : ''}`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
+              onClick={toggleTheme}
+              className="navigation__theme-toggle"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
-              <span></span>
-              <span></span>
-              <span></span>
+              <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
             </button>
           </div>
-        </nav>
 
-        {/* Mobile Navigation */}
-        <div className={`navigation__mobile ${isMobileMenuOpen ? 'is-open' : ''}`}>
-          <a
-            href="/"
-            className="navigation__mobile-link"
-            onClick={handleMobileMenuClick}
-          >
-            Home
-          </a>
-          <a
-            href="#experience"
-            className="navigation__mobile-link"
-            onClick={handleMobileMenuClick}
-          >
-            Experience
-          </a>          
-          <a
-            href="#education"
-            className="navigation__mobile-link"
-            onClick={handleMobileMenuClick}
-          >
-            Education
-          </a>
-          <a
-            href="#projects"
-            className="navigation__mobile-link"
-            onClick={handleMobileMenuClick}
-          >
-            Projects
-          </a>
-          <a
-            href="#contact"
-            className="navigation__mobile-link"
-            onClick={handleMobileMenuClick}
-          >
-            Contact
-          </a>          
+          <div className="navigation__mobile-controls">
+            <button
+              onClick={toggleTheme}
+              className="navigation__theme-toggle"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              <FontAwesomeIcon icon={theme === 'dark' ? faSun : faMoon} />
+            </button>
+          </div>
         </div>
       </Container>
-    </header>
+    </nav>
   );
 };
