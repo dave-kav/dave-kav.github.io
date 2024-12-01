@@ -26,3 +26,8 @@ body * {
   background-color: var(--color-accent);
   color: white;
 }
+
+/* Add consistent scroll margin for all sections */
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 0.5rem);
+}
