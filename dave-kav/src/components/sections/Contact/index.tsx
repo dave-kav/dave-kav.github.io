@@ -2,7 +2,7 @@ import { useRef, MouseEvent } from 'react';
 import { Container } from '../../ui/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faEnvelope, faNewspaper } from '@fortawesome/free-solid-svg-icons';
 import { useInView } from '../../../hooks/useInView';
 import './Contact.css';
 import { SOCIAL_LINKS } from '../../../utils/constants';
@@ -49,6 +49,10 @@ export const Contact = () => {
             <a href={SOCIAL_LINKS.linkedin} className="contact__link" target="_blank" rel="noopener noreferrer">
               <FontAwesomeIcon icon={faLinkedin} />
               <span>LinkedIn</span>
+            </a>
+            <a href={SOCIAL_LINKS.substack} className="contact__link" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon icon={faNewspaper} />
+              <span>Substack</span>
             </a>
             <button 
               onClick={handleResumeClick}
