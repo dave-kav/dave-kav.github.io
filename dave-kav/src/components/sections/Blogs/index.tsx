@@ -97,18 +97,28 @@ export const Blogs: FC = () => {
                       </a>
                     </h2>
                     <div className="blog-item__meta">
-                      <span className="blog-item__author">{blog.author}</span>
                       <time className="blog-item__date">
                         {formatDate(blog.pubDate)}
                       </time>
                     </div>
                   </header>
-                  <div 
-                    className="blog-item__description"
-                    dangerouslySetInnerHTML={{ 
-                      __html: blog.description
-                    }}
-                  />
+                  <div className="blog-item__body">
+                    <div 
+                      className="blog-item__description"
+                      dangerouslySetInnerHTML={{ 
+                        __html: blog.description
+                      }}
+                    />
+                    {blog.enclosure?.link && (
+                      <div className="blog-item__thumbnail">
+                        <img 
+                          src={blog.enclosure.link} 
+                          alt="Post thumbnail" 
+                          className="blog-item__thumbnail-image" 
+                        />
+                      </div>
+                    )}
+                  </div>
                   <footer className="blog-item__footer">
                     <a 
                       href={blog.link} 
