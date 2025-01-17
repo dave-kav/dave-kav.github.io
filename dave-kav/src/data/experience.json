@@ -3,14 +3,15 @@
         {
             "id": 1,
             "company": "Evervault",
-            "role": "Senior Software Engineer",
+            "role": "Lead Engineer, Payments",
             "period": "2024 - Present",
             "location": "Dublin, Ireland",
-            "description": "Spearheading the development of cloud-native applications on AWS, leveraging Rust for performance-critical components and TypeScript for seamless front-end and server-side logic. Utilizing Terraform to automate infrastructure provisioning and ensure scalability and reliability in dynamic production environments.",
+            "description": "Engineering lead for the Payments team, responsible for the development and maintenance of the company's payment related systems. Spearheading the development of cloud-native applications on AWS, leveraging Rust for performance-critical components and TypeScript for seamless front-end and server-side logic.",
             "highlights": [
-                "Designing and implementing clean, scalable APIs that meet the needs of developers and integrate seamlessly with third-party APIs for extended functionality",
-                "Driving improvements in API functionality to enhance performance and developer usability, ensuring seamless adoption by clients and internal teams",
-                "Leading strategic projects to deliver new product features, guiding cross-team collaboration, and improving developer workflows through innovative tooling and processes"
+                "Leading the development of new payment features and integrations, ensuring seamless adoption by clients and internal teams",
+                "Managing the team's technical roadmap and driving improvements in API functionality to enhance performance and developer usability",
+                "Mentoring and guiding the team's engineers while establishing best practices for system reliability and security",
+                "Utilizing Terraform to automate infrastructure provisioning and ensure scalability in dynamic production environments"
             ],
             "technologies": [
                 "Rust",
