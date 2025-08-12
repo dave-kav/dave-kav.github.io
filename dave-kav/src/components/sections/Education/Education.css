@@ -35,6 +35,12 @@
   position: relative;
   padding: 0;
   backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .education-item__header {
@@ -57,6 +63,11 @@
   background: white;
   padding: 0.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.education-item:hover .education-item__logo-wrapper {
+  transform: scale(1.05);
 }
 
 .education-item__logo {
@@ -86,7 +97,7 @@
   font-size: 1.25rem;
   font-weight: 500;
   color: var(--color-accent);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .education-item__period {
@@ -104,6 +115,8 @@
 
 .education-item__description {
   margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .education-item__highlights {
@@ -118,7 +131,8 @@
 .education-item__highlights li {
   position: relative;
   padding-left: 1.25rem;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 0.9375rem;
 }
 
 .education-item__highlights li::before {
@@ -128,6 +142,7 @@
   color: var(--color-accent);
   font-size: 1.25rem;
   line-height: 1;
+  font-weight: bold;
 }
 
 .education-item__courses {
@@ -137,6 +152,23 @@
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--color-border);
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 20px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tech-tag:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -166,5 +198,18 @@
 
   .education-item__degree {
     font-size: 1.125rem;
+  }
+
+  .education-item__content {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .education-item__description {
+    font-size: 0.9375rem;
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.625rem;
   }
 }
