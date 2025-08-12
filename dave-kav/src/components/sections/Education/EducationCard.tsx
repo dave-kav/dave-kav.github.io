@@ -71,16 +71,20 @@ export const EducationCard: FC<EducationCardProps> = ({ education, index }) => {
           <p className="education-item__description">
             {education.description}
           </p>
-          <ul className="education-item__highlights">
-            {education.highlights.map((highlight, index) => (
-              <li key={index}>{highlight}</li>
-            ))}
-          </ul>
-          <div className="education-item__courses">
-            {education.courses.map((course, index) => (
-              <span key={index} className="tech-tag">{course}</span>
-            ))}
-          </div>
+          {education.highlights.length > 0 && (
+            <ul className="education-item__highlights">
+              {education.highlights.map((highlight, index) => (
+                <li key={index}>{highlight}</li>
+              ))}
+            </ul>
+          )}
+          {education.courses.length > 0 && (
+            <div className="education-item__courses">
+              {education.courses.map((course, index) => (
+                <span key={index} className="tech-tag">{course}</span>
+              ))}
+            </div>
+          )}
         </div>
       </Card>
     </motion.div>
